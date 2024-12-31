@@ -1,0 +1,6 @@
+[submodule "lib/CoreRTOS"]
+	path = lib/CoreRTOS
+	url = git@github.com:tharnath08/CoreRTOS.git
+[submodule "lib/pico-sdk"]
+	path = lib/pico-sdk
+	url = git@github.com:raspberrypi/pico-sdk.git
