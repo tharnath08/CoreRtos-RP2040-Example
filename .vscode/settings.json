@@ -38,7 +38,14 @@
     "raspberry-pi-pico.ninjaPath": "${HOME}/.pico-sdk/ninja/v1.12.1/ninja",
     "raspberry-pi-pico.python3Path": "python3",
     "files.associations": {
-        "corertos.h": "c"
+        "corertos.h": "c",
+        "rtos_config.h": "c",
+        "stdint.h": "c",
+        "stddef.h": "c",
+        "stdio.h": "c",
+        "scheduler.h": "c",
+        "rp2040.h": "c",
+        "gpio.h": "c"
     },
     "python.autoComplete.extraPaths": [
         "/opt/ros/humble/lib/python3.10/site-packages",
@@ -47,5 +54,6 @@
     "python.analysis.extraPaths": [
         "/opt/ros/humble/lib/python3.10/site-packages",
         "/opt/ros/humble/local/lib/python3.10/dist-packages"
-    ]
+    ],
+    "idf.pythonInstallPath": "/usr/bin/python"
 }

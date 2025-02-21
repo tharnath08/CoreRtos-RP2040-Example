@@ -7,19 +7,19 @@ endif()
 set(sdkVersion 2.0.0)
 set(toolchainVersion 13_2_Rel1)
 set(picotoolVersion 2.0.0)
+
 if(EXISTS ${USERHOME}/.pico-sdk/cmake/pico-vscode.cmake)
     include(${USERHOME}/.pico-sdk/cmake/pico-vscode.cmake)
 elseif(DEFINED ENV{PICO_SDK_PATH})
     set(PICO_SDK_PATH $ENV{PICO_SDK_PATH})
 else()
-    set(PICO_SDK_PATH lib/pico-sdk)
+    set(PICO_SDK_PATH lib/pio-sdk)
 endif()
 
-if(DEFINED ENV{CORERTOS_PATH})
-    set(CORERTOS_PATH $ENV{CORERTOS_PATH})
-else()
-    set(CORERTOS_PATH lib/CoreRTOS)
-endif()
+
+
+set(CORERTOS_PATH $ENV{CORERTOS_PATH})
+
 
 # ====================================================================================
 cmake_minimum_required(VERSION 3.13)
