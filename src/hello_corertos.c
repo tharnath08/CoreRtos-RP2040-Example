@@ -12,6 +12,7 @@
 #include "hardware/gpio.h"  // Include for GPIO functions
 
 
+
 bool flag = false;
 
 void SysTick_Handler(){
@@ -20,41 +21,33 @@ void SysTick_Handler(){
     printf("hello");
 }
 
-
-
-
-
-
+void HardFault_Handler(void) {
+    volatile uint32_t *stackFrame;
+}
 
 void tast_hello(){
-    printf("Hello RTOS\n");
-    taskDelay(1000);
+    while(1){
+        printf("Hello RTOS\n");
+        taskDelay(1000);
+    }
 }
 
 void task2(){
-    printf("hello from Task2\n");
-    taskDelay(2000);
+    while(1){    
+        printf("hello from Task2\n");
+        taskDelay(2000);
+    }
 }
 
 int main( void )
 {
     stdio_init_all();
-    uint32_t clk_freq = clock_get_hz(clk_sys);
-
-    initSystick(0);
-
-
-
-    // initRTOS(clk_freq);
-    gpio_init(6);
-    gpio_set_dir(6, GPIO_OUT);
-    gpio_put(6,1);
     
     
     // printTaskDetails();
-    createTask(tast_hello,1024, 2);
+    createTask(tast_hello,256, 2);
     // printTaskDetails();
-    createTask(task2,1024,1);
+    createTask(task2,256,1);
     // printTaskDetails();
     startScheduler();
 
